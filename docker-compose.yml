@@ -1,0 +1,23 @@
+version: "3.3"
+
+services:
+
+  folding:
+    build: .
+    image: "folding:latest"
+    command: /bin/sh -c '/opt/fahclient/FAHClient | tee /tmp/FAHClient.log'
+    hostname: folding
+    environment:
+      TZ: Europe/Warsaw
+    restart: "no"
+    container_name: "folding"
+    ports:
+      - "8090:80"
+    networks:
+      xmsnet:
+        aliases:
+          - folding
+networks:
+  xmsnet:
+    external:
+     name: xmsnet
