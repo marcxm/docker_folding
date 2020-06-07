@@ -1,4 +1,4 @@
-# ** docker_folding **
+# docker_folding
 
 folding@home project for docker
 
